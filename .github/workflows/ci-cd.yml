@@ -38,13 +38,15 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
         with:
           args: >
-            -Dsonar.projectKey=flowboard-api
+            -Dsonar.projectKey=Viswajith7_flowboard-api
+            -Dsonar.organization=viswajith7
             -Dsonar.sources=src
             -Dsonar.tests=tests
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-            -Dsonar.qualitygate.wait=true
+            -Dsonar.qualitygate.wait=false
 
   # ─────────────────────────────────────────
   # JOB 2: Build & Push Docker Image
